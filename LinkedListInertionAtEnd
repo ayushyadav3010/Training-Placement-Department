@@ -1,0 +1,58 @@
+
+class Node{
+    Node next;
+    int data;
+    Node(int data)
+    {
+        this.data=data;
+    }
+}
+public class LinkedList2 {
+    Node head;
+    public void print()
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
+    }
+    public void insertionAtEnd(int data)
+    {
+        Node n=new Node(data);
+        if(head==null)
+        {
+            head=n;
+        }
+        else{
+            Node temp=head;
+            while(temp.next!=null)
+            {
+                temp=temp.next;
+            }
+            temp.next=n;
+        }
+      
+
+    }
+    public static void main(String []args)
+    {
+        LinkedList2 obj=new LinkedList2();
+        Node n1=new Node(10);
+        obj.head=n1;
+        Node n2=new Node(20);
+        n1.next=n2;
+        obj.print();
+        System.out.println("Link list after insertion at end");
+        obj.insertionAtEnd(30);
+        obj.insertionAtEnd(40);
+        obj.insertionAtEnd(50);
+        obj.print();
+
+        
+    }
+
+
+
+}   
