@@ -1,0 +1,55 @@
+
+import java.util.Scanner;
+
+
+class Node{
+    Node next;
+    int data;
+    Node(int data)
+    {
+        this.data=data;
+    }
+}
+public class LinkedList {
+    Node head;
+   
+    public void print()
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
+    }
+    public void insertionAtBeg(int data)
+    {
+        Node n=new Node(data);
+        //Node temp=head;
+      
+            n.next=head;
+            head=n;
+       
+    }
+
+    public static void main(String []args)
+ 
+ 
+    {
+        LinkedList obj =new LinkedList();
+        Node first=new Node(10);
+        obj.head=first;
+        Node second =new Node(20);
+        first.next=second;
+        Node third =new Node(30);
+        second.next=third;
+        Node fourth=new Node(40);
+        third.next=fourth;
+        System.out.println("Your LinkedList is ::");
+        obj.print();
+        obj.insertionAtBeg(5);
+        obj.print();
+    }
+    
+}
+
